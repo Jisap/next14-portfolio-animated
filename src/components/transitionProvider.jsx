@@ -8,7 +8,7 @@ import Navbar from './navbar'
 const TransitionProvider = ({ children }) => {
 
   const pathName = usePathname()
-console.log(pathName)
+
   return (
     <AnimatePresence mode="wait">
       <div
