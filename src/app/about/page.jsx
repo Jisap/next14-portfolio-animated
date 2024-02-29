@@ -14,6 +14,7 @@ const AboutPage = () => {
       <div className="">
         {/* Text Container */}
         <div className="p-4 sm:p-8 md:p-12 lg:p-20 xl:p-48 flex flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-64">
+          
           {/* Biography container */}
           <div className="flex flex-col gap-12 justify-center">
             <h1 className="font-bold text-2xl">BIOGRAPHY</h1>
@@ -99,6 +100,7 @@ const AboutPage = () => {
             ></path>
           </svg>
           </div>
+
           {/* Skills Container */}
           <div className="flex flex-col gap-12 justify-center">
             <h1 className="font-bold text-2xl">
@@ -201,8 +203,100 @@ const AboutPage = () => {
               ></path>
             </svg>
           </div>
+
           {/* Experience Container */}
-          <div className="">Experience</div>
+          <div className="flex flex-col gap-12 justify-center pb-48">
+            <h1 className="font-bold text-2xl">
+              EXPERIENCE
+            </h1>
+            <div>
+              <div className="flex justify-between h-48">
+                {/* Left */}
+                <div className="w-1/3">
+                  <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">
+                    Senior JavaScript Engineer
+                  </div>
+                  <div className="p-3 text-sm italic">
+                    I led web development, offering expertise in JavaScript
+                    frameworks.{" "}
+                  </div>
+                  <div className="p-3 text-red-400 text-sm font-semibold">
+                    2024 - Present
+                  </div>
+                  <div className="p-3 rounded bg-white text-sm font-semibold w-fit">
+                    Apple
+                  </div>
+                </div>
+                {/* Center */}
+                <div className="w-1/6 flex justify-center">
+                  {/* Line */}
+                  <div className="w-1 h-full bg-gray-600 rounded relative">
+                    {/* Line circle */}
+                    <div className="absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white -left-2"></div>
+                  </div>
+                </div>
+                {/* RIGHT */}
+                <div className="w-1/3 "></div>
+              </div>
+
+              <div className="flex justify-between h-48">
+                {/* Left */}
+                <div className="w-1/3 "></div>
+                {/* Center */}
+                <div className="w-1/6 flex justify-center">
+                  {/* Line */}
+                  <div className="w-1 h-full bg-gray-600 rounded relative">
+                    {/* Line Circle */}
+                    <div className="absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white -left-2"></div>
+                  </div>
+                </div>
+                {/* Right */}
+                <div className="w-1/3 ">
+                  <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">
+                    Senior React Developer
+                  </div>
+                  <div className="p-3 text-sm italic">
+                    I spearheaded React-based application development,
+                    leveraging advanced skills.{" "}
+                  </div>
+                  <div className="p-3 text-red-400 text-sm font-semibold">
+                    2019 - 2024{" "}
+                  </div>
+                  <div className="p-3 rounded bg-white text-sm font-semibold w-fit">
+                    Microsoft
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex justify-between h-48">
+                {/* Left */}
+                <div className="w-1/3 ">
+                  <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">
+                    Freelancer{" "}
+                  </div>
+                  <div className="p-3 text-sm italic">
+                    I provided web solutions, applying a range of technologies
+                    to address client requirements.{" "}
+                  </div>
+                  <div className="p-3 text-red-400 text-sm font-semibold">
+                    2010 - 2019{" "}
+                  </div>
+                </div>
+                {/* Center */}
+                <div className="w-1/6 flex justify-center">
+                  {/* Line */}
+                  <div className="w-1 h-full bg-gray-600 rounded relative">
+                    {/* Line Circle */}
+                    <div className="absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white -left-2"></div>
+                  </div>
+                </div>
+                {/* Right */}
+                <div className="w-1/3 "></div>
+              </div>
+
+            </div>
+            
+          </div>
         </div>
         {/* SVG Container */}
         <div className="hidden"></div>
