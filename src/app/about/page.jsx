@@ -1,8 +1,20 @@
 "use client"
 
-import { motion } from "framer-motion"
+import Brain from "@/components/brain"
+import { motion, useInView, useScroll } from "framer-motion"
+import { useRef } from "react";
 
 const AboutPage = () => {
+
+  const containerRef = useRef();
+  const { scrollYProgress } = useScroll({ container: containerRef });
+
+  const skillRef = useRef();
+  const isSkillRefInView = useInView(skillRef, { margin: "-100px" });
+
+  const experienceRef = useRef();
+  const isExperienceRefInView = useInView(experienceRef, { margin: "-100px" });
+
   return (
     <motion.div
       className="h-full"
@@ -11,9 +23,9 @@ const AboutPage = () => {
       transition={{ duration: 1 }}
     >
       {/* Container */}
-      <div className="">
+      <div className="h-full overflow-scroll lg:flex" ref={containerRef}>
         {/* Text Container */}
-        <div className="p-4 sm:p-8 md:p-12 lg:p-20 xl:p-48 flex flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-64">
+        <div className="p-4 sm:p-8 md:p-12 lg:p-20 xl:p-48 flex flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-64 lg:w-2/3 lg:pr-0 xl:1/2">
           
           {/* Biography container */}
           <div className="flex flex-col gap-12 justify-center">
@@ -102,7 +114,7 @@ const AboutPage = () => {
           </div>
 
           {/* Skills Container */}
-          <div className="flex flex-col gap-12 justify-center">
+          <div className="flex flex-col gap-12 justify-center" ref={skillRef}>
             <h1 className="font-bold text-2xl">
               SKILLS
             </h1>
@@ -205,7 +217,7 @@ const AboutPage = () => {
           </div>
 
           {/* Experience Container */}
-          <div className="flex flex-col gap-12 justify-center pb-48">
+          <div className="flex flex-col gap-12 justify-center pb-48" ref={experienceRef}>
             <h1 className="font-bold text-2xl">
               EXPERIENCE
             </h1>
@@ -295,11 +307,13 @@ const AboutPage = () => {
               </div>
 
             </div>
-            
+
           </div>
         </div>
         {/* SVG Container */}
-        <div className="hidden"></div>
+        <div className="hidden lg:block w-1/3 sticky top-0 z-30 xl:w-1/2">
+          <Brain scrollYProgress={scrollYProgress} />
+        </div>
       </div>
     </motion.div>
   )
