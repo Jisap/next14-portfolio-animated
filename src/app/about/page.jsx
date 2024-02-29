@@ -2,6 +2,7 @@
 
 import Brain from "@/components/brain"
 import { motion, useInView, useScroll } from "framer-motion"
+import Image from "next/image";
 import { useRef } from "react";
 
 const AboutPage = () => {
@@ -29,6 +30,13 @@ const AboutPage = () => {
           
           {/* Biography container */}
           <div className="flex flex-col gap-12 justify-center">
+            <Image
+              src="https://images.pexels.com/photos/775358/pexels-photo-775358.jpeg?auto=compress&cs=tinysrgb&w=800"
+              alt=""
+              width={112}
+              height={112}
+              className="w-28 h-28 rounded-full object-cover"
+            />
             <h1 className="font-bold text-2xl">BIOGRAPHY</h1>
             <p className="text-lg">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
@@ -92,7 +100,10 @@ const AboutPage = () => {
                 </g>
               </svg>
             </div>
-            <svg
+            <motion.svg
+              initial={{ opacity: 0.2, y: 0 }}
+              animate={{ opacity: 1, y: "10px" }}
+              transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -110,15 +121,24 @@ const AboutPage = () => {
               stroke="#000000"
               strokeWidth="1"
             ></path>
-          </svg>
+          </motion.svg>
           </div>
 
           {/* Skills Container */}
           <div className="flex flex-col gap-12 justify-center" ref={skillRef}>
-            <h1 className="font-bold text-2xl">
+            <motion.h1 
+              initial={{ x: "-300px" }}
+              animate={isSkillRefInView ? { x: 0 } : {}}
+              transition={{ delay: 0.2 }}  
+              className="font-bold text-2xl"
+            >
               SKILLS
-            </h1>
-            <div className="flex gap-4 flex-wrap">
+            </motion.h1>
+            <motion.div 
+              initial={{ x: "-300px" }}
+              animate={isSkillRefInView ? { x: 0 } : {}}
+              className="flex gap-4 flex-wrap"
+            >
               <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
                 JavaScript
               </div>
@@ -194,8 +214,11 @@ const AboutPage = () => {
               <div className="rounded  p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
                 Figma
               </div>
-          </div>
-            <svg
+          </motion.div>
+            <motion.svg
+              initial={{ opacity: 0.2, y: 0 }}
+              animate={{ opacity: 1, y: "10px" }}
+              transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
               viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -213,15 +236,24 @@ const AboutPage = () => {
                 stroke="#000000"
                 strokeWidth="1"
               ></path>
-            </svg>
+            </motion.svg>
           </div>
 
           {/* Experience Container */}
           <div className="flex flex-col gap-12 justify-center pb-48" ref={experienceRef}>
-            <h1 className="font-bold text-2xl">
+            <motion.h1 
+              initial={{ x: "-300px" }}
+              animate={isExperienceRefInView ? { x: "0" } : {}}
+              transition={{ delay: 0.2 }}
+              className="font-bold text-2xl"
+            >
               EXPERIENCE
-            </h1>
-            <div>
+            </motion.h1>
+            <motion.div
+              initial={{ x: "-300px" }}
+              animate={isExperienceRefInView ? { x: "0" } : {}}
+              className=""
+            >
               <div className="flex justify-between h-48">
                 {/* Left */}
                 <div className="w-1/3">
@@ -306,7 +338,7 @@ const AboutPage = () => {
                 <div className="w-1/3 "></div>
               </div>
 
-            </div>
+            </motion.div>
 
           </div>
         </div>
